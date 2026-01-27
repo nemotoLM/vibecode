@@ -1,0 +1,17 @@
+                                        Table "public.users"
+   Column   |            Type             | Collation | Nullable |              Default              
+------------+-----------------------------+-----------+----------+-----------------------------------
+ id         | integer                     |           | not null | nextval('users_id_seq'::regclass)
+ auth0_id   | character varying           |           |          | 
+ email      | character varying           |           |          | 
+ name       | character varying           |           |          | 
+ picture    | character varying           |           |          | 
+ created_at | timestamp without time zone |           |          | 
+ updated_at | timestamp without time zone |           |          | 
+ last_token | text                        |           |          | 
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (id)
+    "ix_users_auth0_id" UNIQUE, btree (auth0_id)
+    "ix_users_email" UNIQUE, btree (email)
+    "ix_users_id" btree (id)
+
